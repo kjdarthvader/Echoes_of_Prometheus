@@ -13,6 +13,11 @@ Echoes of Prometheus is a cutting-edge AI voice assistant that harnesses the pow
 - **Speech Recognition & Synthesis:** Leverages Google's technologies for natural voice input and output.
 - **Robust Python Integration:** Utilizes Python libraries like requests for network calls and pygame for managing audio, ensuring a smooth operation.
 
+## Technical FLowchart 
+To give you a better understanding of how the Voice-Enabled Chatbot operates, below is a flowchart that outlines the key processes and decision points in the system. This diagram illustrates the initialization of the chatbot, the setup for text-to-speech and speech recognition, user interaction, handling of specific commands, and the overall workflow.
+
+![Echoes of Prometheus Technical Flowchart](link-to-your-flowchart-image)
+
 ## Installation and Setup
 
 ### Prerequisites
