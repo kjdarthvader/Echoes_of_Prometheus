@@ -37,6 +37,7 @@ To start the voice assistant:
 ```bash
 python assistant.py
   ```
+Use voice commands for an immersive experience. Try "What's today's weather?" or "Update me on today's headlines."
 ## Performance Metrics
 
 ### Response Accuracy
