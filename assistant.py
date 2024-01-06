@@ -30,7 +30,7 @@ def generate_response(prompt):
 import os
 
 def online_tts(text, lang="tr", speed=1.0):
-    output_folder = os.path.expanduser("~/JarvisOutput")
+    output_folder = os.path.expanduser("~/Kavinsoutput")
     os.makedirs(output_folder, exist_ok=True)
 
     with NamedTemporaryFile(delete=False) as output_file:
@@ -94,7 +94,7 @@ def get_weather(city_name, api_key):
     else:
         return "City not found"
 
-# Replace 'your-weather-API-key' with your actual OpenWeatherMap API key
+# Replace 'your-weather-API-key' with your OpenWeatherMap API key
 weather_api_key = "your-weather-API-key"
 
 def recognize_speech_from_mic(recognizer, microphone, lang="tr"):
