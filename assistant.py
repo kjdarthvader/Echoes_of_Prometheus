@@ -66,6 +66,17 @@ def online_tts(text, lang="tr", speed=1.0):
     # Delete the temporary file manually
     os.remove(output_file.name)
 
+import datetime
+
+def get_time_based_greeting():
+    current_hour = datetime.datetime.now().hour
+    if 5 <= current_hour < 12:
+        return "Good morning"
+    elif 12 <= current_hour < 18:
+        return "Good afternoon"
+    else:
+        return "Good evening"
+
 def recognize_speech_from_mic(recognizer, microphone, lang="tr"):
     with microphone as source:
         print("Ortam gürültüsüne göre ayarlama yapılıyor...")
@@ -85,7 +96,9 @@ def main():
     recognizer = sr.Recognizer()
     microphone = sr.Microphone()
 
-    print("Welcome to the Voice-Enabled Chatbot")
+    greeting = get_time_based_greeting()
+    print(f"{greeting}, welcome to the Voice-Enabled Chatbot")
+    online_tts(f"{greeting}, welcome to the Voice-Enabled Chatbot")
     history = []
 
     while True:
