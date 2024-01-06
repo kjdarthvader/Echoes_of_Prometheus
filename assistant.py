@@ -123,6 +123,14 @@ def main():
 
     while True:
         user_input = recognize_speech_from_mic(recognizer, microphone)
+        
+        if "weather" in user_input.lower():
+            city_name = "Urbana"  # You can modify this to get the city from the user input
+            weather_report = get_weather(city_name, weather_api_key)
+            print(weather_report)
+            online_tts(weather_report)
+            continue
+
         if user_input is None:
             continue
 
