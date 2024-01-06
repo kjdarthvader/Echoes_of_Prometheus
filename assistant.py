@@ -99,9 +99,9 @@ weather_api_key = "your-weather-API-key"
 
 def recognize_speech_from_mic(recognizer, microphone, lang="en"):
     with microphone as source:
-        print("Ortam gürültüsüne göre ayarlama yapılıyor...")
+        print("Adjusting for ambient noise...")
         recognizer.adjust_for_ambient_noise(source)
-        print("Sesiniz dinleniyor...")
+        print("Listening for your voice...")
         audio = recognizer.listen(source)
 
     try:
