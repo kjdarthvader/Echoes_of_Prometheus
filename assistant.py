@@ -66,3 +66,17 @@ def online_tts(text, lang="tr", speed=1.0):
     # Delete the temporary file manually
     os.remove(output_file.name)
 
+def recognize_speech_from_mic(recognizer, microphone, lang="tr"):
+    with microphone as source:
+        print("Ortam gürültüsüne göre ayarlama yapılıyor...")
+        recognizer.adjust_for_ambient_noise(source)
+        print("Sesiniz dinleniyor...")
+        audio = recognizer.listen(source)
+
+    try:
+        print("Konuşmanızı tanıma işlemi yapılıyor...")
+        return recognizer.recognize_google(audio, language=lang)
+    except sr.UnknownValueError:
+        print("Google Ses Tanıma sesi anlamadı")
+    except sr.RequestError as e:
+        print(f"Google Ses Tanıma hizmetinden sonuç istenemedi; {e}")
