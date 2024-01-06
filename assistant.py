@@ -97,6 +97,24 @@ def get_weather(city_name, api_key):
 # Replace 'your-weather-API-key' with your OpenWeatherMap API key
 weather_api_key = "your-weather-API-key"
 
+def get_latest_news(api_key, language="en", country="us"):
+    url = f"https://newsapi.org/v2/top-headlines?country={country}&language={language}&apiKey={api_key}"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # Will raise an HTTPError if the HTTP request returned an unsuccessful status code
+        news_data = response.json()
+
+        if news_data["status"] == "ok":
+            headlines = [article["title"] for article in news_data["articles"][:5]]  # Fetch top 5 headlines
+            return "Here are the latest news headlines: " + "; ".join(headlines)
+        else:
+            return "There was a problem fetching the news."
+    except requests.exceptions.RequestException as e:
+        return f"An error occurred while fetching news: {e}"
+
+# Replace 'your-news-API-key' with your actual NewsAPI key
+news_api_key = "your-news-API-key"
+
 def recognize_speech_from_mic(recognizer, microphone, lang="en"):
     with microphone as source:
         print("Adjusting for ambient noise...")
