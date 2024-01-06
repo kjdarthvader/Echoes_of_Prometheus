@@ -7,3 +7,8 @@ Echoes of Prometheus is a cutting-edge AI voice assistant that harnesses the pow
 - **Intelligent Conversations:** Engage with a voice assistant that understands and responds with the acumen of OpenAI's GPT-3.5.
 - **Real-Time Information:** Access up-to-date weather forecasts and news headlines at your command.
 - **Context-Aware Greetings:** Experience personalized interactions with greetings adapted to the time of day.
+
+## Technology Stack
+- **OpenAI GPT-3.5:** The core for smart, contextual conversation handling.
+- **Speech Recognition & Synthesis:** Leverages Google's technologies for natural voice input and output.
+- **Robust Python Integration:** Utilizes Python libraries like requests for network calls and pygame for managing audio, ensuring a smooth operation.
