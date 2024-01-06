@@ -77,6 +77,26 @@ def get_time_based_greeting():
     else:
         return "Good evening"
 
+import requests
+
+def get_weather(city_name, api_key):
+    base_url = "http://api.openweathermap.org/data/2.5/weather?"
+    complete_url = base_url + "appid=" + api_key + "&q=" + city_name
+    response = requests.get(complete_url)
+    weather_data = response.json()
+
+    if weather_data["cod"] != "404":
+        main = weather_data["main"]
+        temperature = main["temp"]
+        humidity = main["humidity"]
+        weather_desc = weather_data["weather"][0]["description"]
+        return f"Temperature in {city_name} is {temperature} Kelvin, Humidity is {humidity}%, and the weather is {weather_desc}"
+    else:
+        return "City not found"
+
+# Replace 'your-weather-API-key' with your actual OpenWeatherMap API key
+weather_api_key = "your-weather-API-key"
+
 def recognize_speech_from_mic(recognizer, microphone, lang="tr"):
     with microphone as source:
         print("Ortam gürültüsüne göre ayarlama yapılıyor...")
