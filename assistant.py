@@ -80,3 +80,33 @@ def recognize_speech_from_mic(recognizer, microphone, lang="tr"):
         print("Google Ses Tanıma sesi anlamadı")
     except sr.RequestError as e:
         print(f"Google Ses Tanıma hizmetinden sonuç istenemedi; {e}")
+
+def main():
+    recognizer = sr.Recognizer()
+    microphone = sr.Microphone()
+
+    print("Welcome to the Voice-Enabled Chatbot")
+    history = []
+
+    while True:
+        user_input = recognize_speech_from_mic(recognizer, microphone)
+        if user_input is None:
+            continue
+
+        print(f"You: {user_input}")
+        history.append(f"User: {user_input}")
+
+        if user_input.lower() in ["quit", "exit", "bye"]:
+            break
+
+        prompt = "\n".join(history) + "\nAI:"
+        response = generate_response(prompt)
+        history.append(f"AI: {response}")
+
+        print(f"AI: {response}")
+
+        # Convert response to speech
+        online_tts(response)
+
+if __name__ == "__main__":
+    main()
