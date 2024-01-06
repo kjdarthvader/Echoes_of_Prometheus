@@ -29,7 +29,7 @@ def generate_response(prompt):
 
 import os
 
-def online_tts(text, lang="tr", speed=1.0):
+def online_tts(text, lang="en", speed=1.0):
     output_folder = os.path.expanduser("~/Kavinsoutput")
     os.makedirs(output_folder, exist_ok=True)
 
@@ -97,7 +97,7 @@ def get_weather(city_name, api_key):
 # Replace 'your-weather-API-key' with your OpenWeatherMap API key
 weather_api_key = "your-weather-API-key"
 
-def recognize_speech_from_mic(recognizer, microphone, lang="tr"):
+def recognize_speech_from_mic(recognizer, microphone, lang="en"):
     with microphone as source:
         print("Ortam gürültüsüne göre ayarlama yapılıyor...")
         recognizer.adjust_for_ambient_noise(source)
