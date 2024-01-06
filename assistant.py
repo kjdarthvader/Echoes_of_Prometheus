@@ -105,12 +105,12 @@ def recognize_speech_from_mic(recognizer, microphone, lang="en"):
         audio = recognizer.listen(source)
 
     try:
-        print("Konuşmanızı tanıma işlemi yapılıyor...")
+        print("Transcribing your speech...")
         return recognizer.recognize_google(audio, language=lang)
     except sr.UnknownValueError:
-        print("Google Ses Tanıma sesi anlamadı")
+        print("Google Speech Recognition could not understand audio")
     except sr.RequestError as e:
-        print(f"Google Ses Tanıma hizmetinden sonuç istenemedi; {e}")
+        print(f"Could not request results from Google Speech Recognition service; {e}")
 
 def main():
     recognizer = sr.Recognizer()
