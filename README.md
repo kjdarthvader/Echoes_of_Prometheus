@@ -16,7 +16,8 @@ Echoes of Prometheus is a cutting-edge AI voice assistant that harnesses the pow
 ## Technical FLowchart 
 To give you a better understanding of how the Voice-Enabled Chatbot operates, below is a flowchart that outlines the key processes and decision points in the system. This diagram illustrates the initialization of the chatbot, the setup for text-to-speech and speech recognition, user interaction, handling of specific commands, and the overall workflow.
 
-![Echoes of Prometheus Technical Flowchart](link-to-your-flowchart-image)
+![image](https://github.com/kjdarthvader/Echoes_of_Prometheus/blob/main/Technical_Flowchart.png)
+
 
 ## Installation and Setup
 
