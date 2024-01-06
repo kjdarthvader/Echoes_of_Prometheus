@@ -141,7 +141,13 @@ def main():
 
     while True:
         user_input = recognize_speech_from_mic(recognizer, microphone)
-        
+
+        if "news update" in user_input.lower():
+            news_report = get_latest_news(news_api_key)
+            print(news_report)
+            online_tts(news_report)
+            continue
+            
         if "weather" in user_input.lower():
             city_name = "Urbana"  # You can modify this to get the city from the user input
             weather_report = get_weather(city_name, weather_api_key)
